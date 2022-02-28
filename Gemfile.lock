@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    lemonway_ruby (0.1.0)
+    lemonway_ruby (0.1.1)
       activesupport (>= 5.1.0)
 
 GEM
