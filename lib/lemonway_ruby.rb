@@ -1,8 +1,10 @@
 # frozen_string_literal: true
 
+require "active_support"
+require "active_support/core_ext/hash/indifferent_access"
 require_relative "lemonway_ruby/version"
-require "faraday"
-require 'ostruct'
+#require "faraday"
+#require 'ostruct'
 require_relative 'lemonway_ruby/configuration.rb'
 require_relative 'lemonway_ruby/base.rb'
 require_relative 'lemonway_ruby/helpers.rb'
