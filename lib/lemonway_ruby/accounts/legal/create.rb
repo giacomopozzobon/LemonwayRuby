@@ -9,7 +9,7 @@ module LemonwayRuby
             required_keys = %i[company address accountId email firstName lastName nationality payerOrBeneficiary birth isDebtor]
             params = ensure_keys(hash, required_keys)
 
-            conn_lemonway(request_content_type: :url_encoded).post("#{LemonwayRuby.url_conf}/#{generate_uri}", params, "Content-Type" => "application/json") do |req|
+            conn_client.post("#{generate_uri}", params.to_s, "Content-Type" => "application/json") do |req|
               req.headers['Authorization'] = "#{token_type} #{access_token}"
               req.headers['PSU-IP-Address'] = LemonwayRuby.configuration.psu_ip_address
             end

@@ -14,6 +14,10 @@ module LemonwayRuby
       )
     end
 
+    def conn_client
+      LemonwayRuby.conn_lemonway(request_content_type: :url_encoded)
+    end
+
     def ensure_keys(hash, required_keys = ‰i[], optional_keys = %i[])
       # Ensure there are no extra keys
       hash.assert_valid_keys(required_keys + optional_keys )
@@ -27,7 +31,7 @@ module LemonwayRuby
 
     private
     def parse_path
-      "#{LemonwayRuby.url_conf}/#{name
+        "#{LemonwayRuby.url_conf}/#{name
         .split("::")[1..-1]
         .join("/")
         .downcase}"

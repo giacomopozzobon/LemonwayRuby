@@ -9,8 +9,8 @@ require_relative 'lemonway_ruby/configuration.rb'
 require_relative 'lemonway_ruby/base.rb'
 require_relative 'lemonway_ruby/helpers.rb'
 require_relative 'lemonway_ruby/client.rb'
-require_relative 'lemonway_ruby/accounts/legal/legal.rb'
-
+require_relative 'lemonway_ruby/accounts/legal/create.rb'
+require_relative 'lemonway_ruby/accounts/account_id/documents/upload/create.rb'
 
 module LemonwayRuby
   class Error < Exception
