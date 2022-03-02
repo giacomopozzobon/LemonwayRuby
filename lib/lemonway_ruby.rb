@@ -14,7 +14,7 @@ require_relative 'lemonway_ruby/accounts/account_id/documents/upload/create.rb'
 require_relative 'lemonway_ruby/moneyouts/iban/create.rb'
 require_relative 'lemonway_ruby/moneyins/sdd/mandate/create.rb'
 require_relative 'lemonway_ruby/accounts/account_id/documents/document_id/signinit/create.rb'
-
+require_relative 'lemonway_ruby/moneyins/sdd/mandate/mandate_id/unregister/delete.rb'
 
 module LemonwayRuby
   class Error < Exception

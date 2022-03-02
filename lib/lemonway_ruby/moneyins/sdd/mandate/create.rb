@@ -5,7 +5,7 @@ module LemonwayRuby
         extend Helpers
 
         class << self
-          def register_sdd_mandate(hash = {}, other_attr = {})
+          def register_sdd_mandate(hash = {}, other_attrs = {})
             LemonwayRuby.authenticated do |access_token, token_type|
               required_keys = %i[wallet holder bic iban isRecurring]
               params = ensure_keys(hash, required_keys)
