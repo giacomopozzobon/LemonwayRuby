@@ -11,6 +11,7 @@ require_relative 'lemonway_ruby/helpers.rb'
 require_relative 'lemonway_ruby/client.rb'
 require_relative 'lemonway_ruby/accounts/legal/create.rb'
 require_relative 'lemonway_ruby/accounts/account_id/documents/upload/create.rb'
+require_relative 'lemonway_ruby/moneyouts/iban/create.rb'
 
 module LemonwayRuby
   class Error < Exception
