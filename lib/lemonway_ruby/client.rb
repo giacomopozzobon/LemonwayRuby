@@ -16,7 +16,7 @@ module LemonwayRuby
     end
 
     def url_conf
-      "/mb/#{LemonwayRuby.configuration.return_url}/#{LemonwayRuby.configuration.webservice}/#{LemonwayRuby.configuration.api_version}"
+      "/mb#{LemonwayRuby.configuration.return_url}/#{LemonwayRuby.configuration.webservice}/#{LemonwayRuby.configuration.api_version}"
     end
   end
 end
