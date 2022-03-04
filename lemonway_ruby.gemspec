@@ -30,9 +30,10 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.add_dependency "activesupport", ">= 5.1.0"
+  spec.add_dependency "activesupport", "5.1.4"
   spec.add_development_dependency "faraday_middleware"
-  spec.add_development_dependency "rubocop"
+  spec.add_development_dependency "minitest"
+  spec.add_development_dependency "minitest-reporters"
 
   # Uncomment to register a new dependency of your gem
   # spec.add_dependency "example-gem", "~> 1.0"
