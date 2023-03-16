@@ -9,7 +9,7 @@ module LemonwayRuby
             class << self
               def show(accountid, mandateid)
                 LemonwayRuby.authenticated do |access_token, token_type|
-                  conn_client.put(generate_uri.gsub("mandateid", mandateid.to_s).gsub("accountid", accountid.to_s), params.to_json, "Content-Type" => "application/json") do |req|
+                  conn_client.put(generate_uri.gsub("mandateid", mandateid.to_s).gsub("accountid", accountid.to_s),  "Content-Type" => "application/json") do |req|
                     req.headers['Authorization'] = "#{token_type} #{access_token}"
                     req.headers['PSU-IP-Address'] = LemonwayRuby.configuration.psu_ip_address
                   end
