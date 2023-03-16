@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Write a longer description or delete this line."
   spec.homepage = "https://github.com/MIPISE/LemonwayRuby"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.4.0"
+  spec.required_ruby_version = ">= 3.1.1"
 
   spec.metadata["allowed_push_host"] = "TODO: Set to your gem server 'https://example.com'"
 
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.bindir = "exe"
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
-  spec.add_dependency "activesupport", "5.1.4"
+  spec.add_dependency "activesupport"
   spec.add_development_dependency "faraday_middleware"
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "minitest-reporters"
