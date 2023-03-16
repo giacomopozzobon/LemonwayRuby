@@ -22,6 +22,7 @@ require_relative 'lemonway_ruby/accounts/account_id/documents/index.rb'
 require_relative 'lemonway_ruby/accounts/account_id/transactions/index.rb'
 require_relative 'lemonway_ruby/moneyins/bankwire/iban/create/create.rb'
 require_relative 'lemonway_ruby/moneyins/sdd/mandate/init/create.rb'
+require_relative 'lemonway_ruby/moneyins/account_id/mandate/mandate_id/document/show.rb'
 
 module LemonwayRuby
   class Error < Exception
