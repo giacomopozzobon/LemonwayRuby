@@ -7,7 +7,7 @@ module LemonwayRuby
       @conn ||= {}
       @conn[request_content_type] = Faraday.new(
         url: "https://#{LemonwayRuby.configuration.url_auth}",
-        headers: { 'accept' => 'application/json;charset=UTF-8', 
+        headers: { 'accept' => 'application/json;charset=UTF-8',
                    'Content-Type' => 'application/x-www-form-urlencoded' }
       ) do |conn|
         conn.request request_content_type
@@ -17,7 +17,7 @@ module LemonwayRuby
       @conn[request_content_type]
     end
 
-    def auth 
+    def auth
       conn(request_content_type: :url_encoded).post('/oauth/api/v1/oauth/token', { Grant_type: LemonwayRuby.configuration.grant_type }) do |req|
         req.headers['Authorization'] = LemonwayRuby.configuration.authorization
       end
