@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name = "lemonway_ruby"
-  s.version = "0.1.2"
+  s.version = "0.1.3"
   s.summary = "Ruby SDK for Lemonway API"
   s.description = "Ruby SDK for Lemonway API"
   s.authors = ["nicolas.vandenbogaerde@mipise.com"]
