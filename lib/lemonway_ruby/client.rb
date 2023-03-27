@@ -5,11 +5,14 @@ module LemonwayRuby
       @conn ||= {}
       @conn[request_content_type] = Faraday.new(
         url: "https://#{LemonwayRuby.configuration.url}",
-        headers: { 'Accept' => 'application/json', 
-                   'Content-Type' => 'application/json' }
+        headers: {
+          "Accept" => "application/json",
+          "Content-Type" => "application/json"
+        },
+        proxy: LemonwayRuby.configuration.proxy
       ) do |conn|
         conn.request request_content_type
-        conn.response :json, :content_type => /\bjson$/
+        conn.response :json, content_type: /\bjson$/
         conn.adapter Faraday.default_adapter
       end
       @conn[request_content_type]
