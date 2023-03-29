@@ -21,6 +21,6 @@ describe "Account" do
       isDebtor: 0
     }
     register_wallet = LemonwayRuby::Accounts::Legal.register_wallet(params)
-    assert_equal register_wallet.body["legalAccount"]["id"], wallet_id
+    assert_equal register_wallet.dig("legalAccount", "id"), wallet_id
   end
 end
