@@ -67,7 +67,7 @@ DEPENDENCIES
   lemonway_ruby!
   minitest
   minitest-reporters
-  rake (~> 13.0)
+  rake
 
 BUNDLED WITH
    2.3.5

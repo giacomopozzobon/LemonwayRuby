@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.add_dependency "activesupport", "~> 6.1.5"
   s.add_dependency "faraday_middleware", "~> 1.2.0"
 
+  s.add_development_dependency "rake"
   s.add_development_dependency "minitest"
   s.add_development_dependency "minitest-reporters"
 end
