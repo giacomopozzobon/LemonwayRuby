@@ -29,7 +29,6 @@ module LemonwayRuby
         "authorization" => "Bearer #{access_token}",
         "psu-ip-address" => LemonwayRuby.configuration.psu_ip_address
       }
-      # puts "---> #{method} : #{uri.path} #{body&.to_json}"
       http = Net::HTTP.new(*http_args)
       http.use_ssl = true
       uri_path =
