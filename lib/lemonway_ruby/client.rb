@@ -3,8 +3,8 @@ require "json"
 
 module LemonwayRuby
   module Client
-    def get(uri)
-      request(uri, method: "GET")
+    def get(uri, params=nil)
+      request(uri, method: "GET", params: params)
     end
 
     def post(uri, body)
@@ -17,7 +17,7 @@ module LemonwayRuby
 
     private
 
-    def request(path, body: nil, method: "GET")
+    def request(path, body: nil, method: "GET", params: nil)
       uri = URI.parse("#{LemonwayRuby.configuration.url_api}/#{path}")
       http_args = [uri.host, uri.port]
       if LemonwayRuby.configuration.proxy_url
@@ -29,10 +29,15 @@ module LemonwayRuby
         "authorization" => "Bearer #{access_token}",
         "psu-ip-address" => LemonwayRuby.configuration.psu_ip_address
       }
-
       http = Net::HTTP.new(*http_args)
       http.use_ssl = true
-      res = http.send_request(method, uri.path, body.to_json, headers)
+      uri_path =
+        if params.present?
+          "#{uri.path}?#{params.map{ |k, v| "#{k}=#{v}" }.join("&")}"
+        else
+          uri.path
+        end
+      res = http.send_request(method, uri_path, body&.to_json, headers)
       JSON.parse(res.body)
     end
 
