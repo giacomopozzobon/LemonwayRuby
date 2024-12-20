@@ -30,19 +30,17 @@
 # })
 # ************
 
-require 'securerandom'
-
 module LemonwayRuby
   module P2P
     extend Helpers
 
     class << self
       def transfer(hash = {})
-        required_keys = %i[debitAccountId creditAccountId amount originTransactionId]
+        required_keys = %i[debitAccountId creditAccountId amount]
         optional_keys = %i[comment scheduledDate privateData reference]
         params = ensure_keys(hash, required_keys, optional_keys)
 
-        params[:originTransactionId] ||= SecureRandom.uuid    # auto-generate originTransactionId
+        params[:originTransactionId] ||= (Time.now.to_i % 2_147_483_648) + rand(1000)    # auto-generate originTransactionId
 
         LemonwayRuby.post(generate_uri, params)
       end
